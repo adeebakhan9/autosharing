@@ -3000,7 +3000,7 @@ div#content.company-list div#content-center div.pager-top div.pager {
 
 div.company-listing {
     padding: 20px 0;
-    height: 140px;
+    height: 151px;
     overflow: hidden;
     position: relative;
 }
@@ -3013,8 +3013,8 @@ div.company-listing-image {
 }
 
 div.company-listing-image img {
-    width: 140px !important;
-    height: 140px !important;
+    width: 151px !important;
+    height: 151px !important;
 }
 
 div.company-listing-featured {
@@ -3039,7 +3039,7 @@ div.company-listing-body {
     padding: 0 20px;
     float: left;
     width: 440px;
-    height: 140px;
+    height: 151px;
     overflow: hidden;
 }
 
@@ -4525,7 +4525,7 @@ div#pricing-plans div.pricing-table div.pricing-column div.pricing-cost div.pric
 }
 
 div#pricing-plans div.pricing-table div.pricing-column div.pricing-cost div.price-big {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 300;
     line-height: 60px;
     height: 60px;
@@ -4548,12 +4548,19 @@ div#pricing-plans div.pricing-table div.pricing-column div.pricing-cost div.pric
     -khtml-opacity: 0.5; /* Konqueror 3.1, Safari 1.1 */
     opacity: 0.5; /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9 */
 }
-
+/*
 div#pricing-plans div.pricing-table div.pricing-column div.pricing-cell {
     height: 20px;
     padding: 15px 0;
     line-height: 20px;
     text-align: center;
+    font-weight: bold;
+} */
+div#pricing-plans div.pricing-table div.pricing-column div.pricing-cell {
+    height: 20px;
+    padding: 15px;
+    line-height: 20px;
+  
     font-weight: bold;
 }
 

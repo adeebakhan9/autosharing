@@ -69,7 +69,13 @@ var EM = {"ajaxurl":"http:\/\/demo.sokolby.com\/metrodir\/wp-admin\/admin-ajax.p
     #wpadminbar #wp-admin-bar-siteoptions >.ab-item { background-image: url('http://demo.sokolby.com/metrodir/wp-content/themes/metrodir/skl/framework/img/skl.png');background-repeat: no-repeat;background-position: 0.85em 50%;padding-left: 32px;}
 </style>
 	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
-<script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/common.js"></script><script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/util.js"></script><script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/geocoder.js"></script><script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/map.js"></script><script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/overlay.js"></script><script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/onion.js"></script><script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/stats.js"></script><script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/controls.js"></script><script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/marker.js"></script><script type="text/javascript" charset="utf-8" async="" src="<?php echo base_url(); ?>assets/js/timeline.f80add415609dfac297fd37eb66584ee.js"></script></head>
+<script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/common.js"></script><script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/util.js"></script><script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/geocoder.js"></script><script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/map.js"></script><script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/overlay.js"></script><script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/onion.js"></script><script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/stats.js"></script><script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/controls.js"></script><script type="text/javascript" charset="UTF-8" src="<?php echo base_url(); ?>assets/js/marker.js"></script><script type="text/javascript" charset="utf-8" async="" src="<?php echo base_url(); ?>assets/js/timeline.f80add415609dfac297fd37eb66584ee.js"></script>
+
+
+
+
+
+</head>
 
 <body class="home page page-id-78 page-template page-template-page-profile page-template-page-profile-php">
 
@@ -137,7 +143,7 @@ var EM = {"ajaxurl":"http:\/\/demo.sokolby.com\/metrodir\/wp-admin\/admin-ajax.p
         </div><!-- /Logo -->
 
         <!-- Main Menu --><div id="main-menu">
-            <div class="menu-menu-container"><ul id="sf-menu" class="menu sf-js-enabled sf-arrows"><li id="nav-menu-item-487" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-78 current_page_item"><a href="http://demo.sokolby.com/metrodir/">Home</a></li>
+            <div class="menu-menu-container"><ul id="sf-menu" class="menu sf-js-enabled sf-arrows"><li id="nav-menu-item-487" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-78 current_page_item"><a href="<?php echo base_url();?>/index.php/home">Home</a></li>
 <li id="nav-menu-item-482" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://demo.sokolby.com/metrodir/companies/" class="sf-with-ul">Company</a>
 <ul class="sub-menu" style="display: none;">
 	<li id="nav-menu-item-502" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-company"><a href="http://demo.sokolby.com/metrodir/company/industrie-llc/">Company with tabs</a></li>
@@ -153,7 +159,7 @@ var EM = {"ajaxurl":"http:\/\/demo.sokolby.com\/metrodir\/wp-admin\/admin-ajax.p
 </li>
 <li id="nav-menu-item-481" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://demo.sokolby.com/metrodir/blog/">Blog</a></li>
 <li id="nav-menu-item-484" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://demo.sokolby.com/metrodir/submit-listing/">Price listing</a></li>
-<li id="nav-menu-item-488" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://demo.sokolby.com/metrodir/about-us/" class="sf-with-ul">About us</a>
+<li id="nav-menu-item-488" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="<?php echo base_url();?>index.php/home/about_us" class="sf-with-ul">About us</a>
 <ul class="sub-menu" style="display: none;">
 	<li id="nav-menu-item-489" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://demo.sokolby.com/metrodir/contact-us/">Contact us</a></li>
 </ul>

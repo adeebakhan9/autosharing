@@ -28,7 +28,7 @@
     
     <!-- Default Search -->
 	
-	<form id="default-search" class="default-search clearfix" role="search" action="http://demo.sokolby.com/metrodir">
+	<form id="default-search" class="default-search clearfix" action="<?php echo base_url();?>/index.php/home/rideList">
         <input type="text" id="search-what" class="text-input-black input-text" name="s" placeholder="Insert company name" value="From">
 		
 		

@@ -20,9 +20,9 @@ class Main_template extends CI_Controller {
 	 */
 	public function index(){
 	
-	$this->load->view('template/header');
+		$this->load->view('template/header');
 		$this->load->view('template/index'); 
-			$this->load->view('template/footer');
+		$this->load->view('template/footer');
 			
 	}
 	
@@ -146,6 +146,13 @@ class Main_template extends CI_Controller {
 				
 				}
 				
-				
+			public function logout(){
+			
+			unset($_SESSION);
+			$this->session->sess_destroy();
+			
+         	redirect('main_template/loginPage');
+			
+			}	
 
 }

@@ -72,6 +72,8 @@ class User_model extends CI_Model
 	
 	 function addCar($data)
     {
+	
+	
         return $result=$this->db->insert('car', $data);
         if($result)	{
 		
@@ -96,6 +98,12 @@ class User_model extends CI_Model
 	function rideOfferedDetails(){
 	
 		$query=$this->db->query("select * from ride where user_id ='".$_SESSION['user_id']."' ");
+	return  $query->result_array();
+	}
+	function viewRideDetails($rideId){
+	
+		$query=$this->db->query("select * from ride where id ='".$rideId."' ");
+		//echo $this->db->last_query(); exit;
 	return  $query->result_array();
 	}
     	

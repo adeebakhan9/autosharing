@@ -137,7 +137,7 @@ var EM = {"ajaxurl":"http:\/\/demo.sokolby.com\/metrodir\/wp-admin\/admin-ajax.p
         </div><!-- /Logo -->
 
         <!-- Main Menu --><div id="main-menu">
-            <div class="menu-menu-container"><ul id="sf-menu" class="menu sf-js-enabled sf-arrows"><li id="nav-menu-item-487" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-78 current_page_item"><a href="http://demo.sokolby.com/metrodir/">Home</a></li>
+            <div class="menu-menu-container"><ul id="sf-menu" class="menu sf-js-enabled sf-arrows"><li id="nav-menu-item-487" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-78 current_page_item"><a href="<?php echo base_url();?>/index.php/home">Home</a></li>
 <li id="nav-menu-item-482" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://demo.sokolby.com/metrodir/companies/" class="sf-with-ul">Company</a>
 <ul class="sub-menu" style="display: none;">
 	<li id="nav-menu-item-502" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-company"><a href="http://demo.sokolby.com/metrodir/company/industrie-llc/">Company with tabs</a></li>
@@ -153,7 +153,7 @@ var EM = {"ajaxurl":"http:\/\/demo.sokolby.com\/metrodir\/wp-admin\/admin-ajax.p
 </li>
 <li id="nav-menu-item-481" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://demo.sokolby.com/metrodir/blog/">Blog</a></li>
 <li id="nav-menu-item-484" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://demo.sokolby.com/metrodir/submit-listing/">Price listing</a></li>
-<li id="nav-menu-item-488" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://demo.sokolby.com/metrodir/about-us/" class="sf-with-ul">About us</a>
+<li id="nav-menu-item-488" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="<?php base_url();?>/index.php/about_us" class="sf-with-ul">About us</a>
 <ul class="sub-menu" style="display: none;">
 	<li id="nav-menu-item-489" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://demo.sokolby.com/metrodir/contact-us/">Contact us</a></li>
 </ul>

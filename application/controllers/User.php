@@ -136,9 +136,12 @@ $data = array(
 
 
 public function carPage(){
-
+ $query=$this->db->query("select * from car where userID='".$_SESSION['user_id']."'");
+ 
+ $data['carCheck']=$row=$query->num_rows();
+ 
 		$this->load->view('user/header.php');
-		$this->load->view('user/car.php');
+		$this->load->view('user/car.php',$data);
 		$this->load->view('user/footer.php');
 
 
@@ -160,12 +163,14 @@ public function verificationPage(){
 
 public function addCar(){
 
- $this->load->library('upload');
+  $this->load->library('upload');
     			
- $directory2="upload/car/"; 
-$filename=$_FILES["images"]["name"]; 
-$tempath=$_FILES["images"]["tmp_name"]; 
-$upload_path=$directory2.$filename;
+$directory2="upload/car/"; 
+
+$filename2=$_FILES["image"]["name"]; 
+$tempath2=$_FILES["image"]["tmp_name"]; 
+$upload_path2=$directory2.$filename2;
+
 
 			$data=array();
 			$data['carName']=$this->input->post('carName');
@@ -175,12 +180,20 @@ $upload_path=$directory2.$filename;
 			$data['color']=$this->input->post('color');
 			$data['type']=$this->input->post('type');
 			$data['userID']=$_SESSION['user_id'];
-			$data['images']=$filename;
+			$data['images']=$filename2;
 			
- move_uploaded_file($tempath,$upload_path);
-
-			$this->load->model('User_model');
+ move_uploaded_file($tempath2,$upload_path2);
+ $query=$this->db->query("select * from car where userID='".$_SESSION['user_id']."'");
+ $data['carCheck']=$row=$query->num_rows();
+				
+if($row>0){ 
+ $query=$this->db->query("update car set carName='".$data['carName']."',model='".$data['model']."',comfort='".$data['comfort']."',seats='".$data['seats']."',color='".$data['color']."',type='".$data['type']."',images='".$filename2."' where userID='".$_SESSION['user_id']."'");
+ }
+else{
+$this->load->model('User_model');
 			$this->User_model->addCar($data);
+}
+			
 			
 
 }
@@ -202,6 +215,7 @@ public function deleteCar($param=NULL){
 
 
 $result=$this->db->query("delete from car where id='".$param."' ");
+
 if($result){
 
 redirect('User/carDetailsPage');
@@ -228,15 +242,30 @@ $data=array();
  $array=$this->input->post('city');
   $city=implode(",",$array);
  
+	$arrDate=$this->input->post('arrivalDate');
+	$expArrdate=explode("/",$arrDate);
+	$impArrDate=$expArrdate[2].'-'.$expArrdate[0].'-'.$expArrdate[1];
 	
+	$depDate=$this->input->post('departureDate');
+	$expDepdate=explode("/",$depDate);
+	$impDepDate=$expDepdate[2].'-'.$expDepdate[0].'-'.$expDepdate[1];
+	 //echo $impArrDate; exit;
 			$data['departure']=$this->input->post('departure');
 			$data['arrival']=$this->input->post('arrival');
 			$data['stops']=$city;
-			$data['departureDate']=$this->input->post('departureDate');
-	       $data['departureTime']=$this->input->post('departureTime');
-	       $data['arrivalDate']=$this->input->post('arrivalDate');
-		   $data['arrivalTime']=$this->input->post('arrivalTime');
-		   $data['tripType']=$this->input->post('tripType');
+	        $data['departureDate']=$impDepDate;
+			
+	        $data['departureTime']=$this->input->post('departureTime');
+	        $data['arrivalDate']=$impArrDate;
+		    $data['arrivalTime']=$this->input->post('arrivalTime');
+		    $data['tripType']=$this->input->post('tripType');
+			  $data['rideDetails']=$this->input->post('rideDetails');  
+			  $data['luggageSize']=$this->input->post('luggageSize');  
+			  $data['seatOffered']=$this->input->post('quant[1]');  
+			  $data['pricePerCoTraveller']=$this->input->post('quanttwo[1]');
+			 $data['backSeat']=$this->input->post('backSeat');
+			 	 $data['leavingAt']=$this->input->post('leavingAt');
+				 	 $data['detour']=$this->input->post('detour');
 			$data['user_id']=$_SESSION['user_id'];
 
 			$this->load->model('User_model');
@@ -255,15 +284,27 @@ $data=array();
 public function rideOffered(){
 
 	$this->load->model('User_model');
-				$data['val']=$this->User_model->rideOfferedDetails();
+	$data['val']=$this->User_model->rideOfferedDetails();
 
 	$this->load->view('user/header.php');
-			$this->load->view('user/rideOffered.php',$data);
-			$this->load->view('user/footer.php');
+	$this->load->view('user/rideOffered.php',$data);
+	$this->load->view('user/footer.php');
 
 
 
 }
+ public function viewRide($param=NULL){
+ 
+ 	$query=$this->db->query("select * from ride where id ='".$param."' ");
+ //$this->load->model('User_model');
+	$data['val']=$query->result_array();
+	//print_r($data); exit;
 
+	$this->load->view('user/header.php');
+	$this->load->view('user/viewRide.php',$data);
+	$this->load->view('user/footer.php');
+ 
+ }
+ 
 }
 

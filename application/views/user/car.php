@@ -60,13 +60,23 @@
                     </div>
                 </div>
               
-                
+                 <div class="form-group">
            
-                <div class="form-group">
-
-                    <div class="col-sm-10"> <button class="btn btn-primary" id="add" type="submit">Add a Car</button>
+ <?php               
+if($carCheck >0){ ?>
+ <div class="col-sm-10"> <button class="btn btn-primary" id="add" type="submit">Update a Car</button>
                       
                     </div>
+
+<?php } 
+else{ ?>
+ <div class="col-sm-10"> <button class="btn btn-primary" id="add" type="submit">Add a Car</button>
+                      
+                    </div>
+
+<?php }?>
+                   
+					
                 </div>
                 <div class="hr-line-dashed"></div>
                 
@@ -155,7 +165,7 @@
               
               	 <div class="form-group"><label class="col-sm-2 control-label">Image </label>
 
-                    <div class="col-sm-10"><input type="file" value="" class="form-control input-sm" name="images">
+                    <div class="col-sm-10"><input type="file" value="" class="form-control input-sm" name="image">
                       
                     </div>
                 </div>   

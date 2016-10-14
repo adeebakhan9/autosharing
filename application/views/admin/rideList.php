@@ -40,6 +40,7 @@
            <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
     <thead>
     <tr>
+	<th>Posted By</th>
         <th>Departure point</th>
         <th>Drop-off point</th>
         <th>Departure Date and Time</th>
@@ -49,8 +50,9 @@
     </tr>
     </thead>
     <tbody>
-	<?php foreach($val as $val1) { ?>
+	<?php foreach($ride as $val1) { ?>
     <tr>
+	 <td><?php echo $val1['first_name']; ?> <?php echo $val1['last_name']; ?></td>
         <td><?php echo $val1['departure']; ?></td>
       
         <td class="center"><?php echo $val1['arrival']; ?></td>

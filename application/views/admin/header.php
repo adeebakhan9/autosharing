@@ -64,7 +64,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.html"> 
-                <span style="margin-top:-10px">Inventory Management</span></a>
+                <span style="margin-top:-10px">Autosharing Admin</span></a>
 
             <!-- user dropdown starts -->
             <div class="btn-group pull-right">
@@ -141,15 +141,15 @@
                         <li class="nav-header">Main</li>
                         <li><a class="ajax-link" href="index.html"><i class="glyphicon glyphicon-home"></i><span> Dashboard</span></a>
                         </li>
-                        <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/create_category_page"><i class="glyphicon glyphicon-eye-open"></i><span> Create Category</span></a>
+                        <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/userList"><i class="glyphicon glyphicon-eye-open"></i><span> User List </span></a>
                         </li>
                        
-                        <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/add_products_page"><i class="glyphicon glyphicon-list-alt"></i><span> Add Products</span></a>
+                        <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/carList"><i class="glyphicon glyphicon-list-alt"></i><span> Car List </span></a>
                         </li>
-                         <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/create_managers_page"><i class="glyphicon glyphicon-eye-open"></i><span> Create Managers</span></a>
+                         <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/ridelist"><i class="glyphicon glyphicon-eye-open"></i>Ride List <span></span></a>
                         </li>
                        
-                        <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/order_form_page"><i class="glyphicon glyphicon-font"></i><span> Place order</span></a>
+                         <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/bookingList<strong></strong>"><i class="glyphicon glyphicon-font"></i><span>Booking List</span></a>
                         </li>
                           <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/create_sub_category_page"><i
                                     class="glyphicon glyphicon-edit"></i><span> Create Sub Category</span></a></li>
