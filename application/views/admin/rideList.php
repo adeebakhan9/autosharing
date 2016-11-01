@@ -13,9 +13,20 @@
             <div>
     <ul class="breadcrumb">
         <li>
-           <a href="#"> <h3> </h3></a>
-        </li>
+		
+         
+	
+	</li>
     </ul>
+	
+				<form id="default-search" class="default-search clearfix" role="search" method="post">
+				 <input type="text" id="from" class="text-input-black input-text" name="s" placeholder="From" >
+				 <input type="text" id="to" class="text-input-black input-text ui-autocomplete-input" name="where" placeholder="To" autocomplete="off" value="">
+				 <input type="text" id="datepicker" class="depDate" name="depDate" placeholder="Date" autocomplete="off" value="">
+				 <input type="submit" class="submit" value="Search Now" title="Search Now" name="search_simple" id="search" > 
+				 <div class="clear"></div>
+				</form>
+	
 </div>
 <div class=" row">
     
@@ -28,7 +39,7 @@
                 <h2><i class="glyphicon glyphicon-repeat"> </i> Ride offered</h2>
 
                
-            </div>
+          </div>
             <br />
             
             <div class="box-content row"  >
@@ -49,7 +60,7 @@
         <th>Actions</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody class="div_one">
 	<?php foreach($ride as $val1) { ?>
     <tr>
 	 <td><?php echo $val1['first_name']; ?> <?php echo $val1['last_name']; ?></td>
@@ -60,7 +71,7 @@
 		 <td class="center"><b><?php echo $val1['arrivalDate']; ?> </b>  <?php echo $val1['arrivalTime']; ?></td>
        
         <td class="center">
-            <a class="btn btn-success" href="<?php echo base_url(); ?>index.php/User/viewRide/<?php echo $val1['id']; ?>">
+            <a class="btn btn-success" href="<?php echo base_url(); ?>index.php/Admin/viewRide/<?php echo $val1['id']; ?>">
                 <i class="glyphicon glyphicon-zoom-in icon-white"></i>
                 View
             </a>
@@ -69,6 +80,7 @@
     </tr>
   <?php } ?>
     </tbody>
+	<tbody class="result"></tbody>
     </table>
          
       </div>
@@ -81,4 +93,56 @@
 
     <hr>
 	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+	 <script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker();
 	
+  });
+  
+  </script>
+ <script>
+	
+	
+	$(document).ready(function(){
+	
+	
+    $("#search").click(function(a){
+	//alert("satya"); exit();
+   a.preventDefault();
+    //alert("satya"); exit();
+    var to=$("#to").val();
+      
+      var from=$("#from").val();
+	  var depDate=$(".depDate").val();
+ alert(to);
+ alert(from);
+           
+   $.ajax({
+           
+           
+           type:"POST",
+           url:"search_ride" ,
+            data: {
+            'to':to,
+              'from':from,
+			  'depDate':depDate
+			  
+        },
+           success:function(satya){
+			   alert("success");
+			//   alert(specialization);
+           $(".div_one").hide();
+           $(".result").html(satya);
+		   
+           }
+		   
+           });
+  
+    });
+});
+	
+	
+	  </script>

@@ -305,6 +305,52 @@ public function rideOffered(){
 	$this->load->view('user/footer.php');
  
  }
+  public function inbox(){
  
+ $query=$this->db->query("select * from messaging where msg_to='".$_SESSION['user_id']."' or msg_from='".$_SESSION['user_id']."'");
+ 
+// foreach($query as $val){
+ //$msgId=echo $val['id'];
+ 
+// }
+ //$query2=$this->db->query("select * from conversation where msg_id='".$msgId."' ");
+// $rows=$query2->num_rows();
+ //$this->load->model('User_model');
+	$data['msg']=$query->result_array();
+	//print_r($data); exit;
+
+	$this->load->view('user/header.php');
+	$this->load->view('user/inbox.php',$data);
+	$this->load->view('user/footer.php');
+ 
+ }
+ public function conversation($param1=NULL,$param2=NULL){
+ 
+  $query=$this->db->query("select * from conversation where msg_id='".$param1."'");
+ // echo $this->db->last_query(); exit;
+    $data['msg']=$result=$query->result_array();
+	
+	$this->load->view('user/header.php');
+	$this->load->view('user/conversation.php',$data);
+	$this->load->view('user/footer.php');
+	
+ 
+ }
+ 
+ public function reply(){
+ 
+$msg_to=$this->input->post('msg_to');
+$msg=$this->input->post('msg');
+$msg_id=$this->input->post('msg_id');
+//$date=date('Y-m-d');
+//echo $msg_to; exit;
+  $query=$this->db->query("INSERT INTO `conversation`(`msg_from`, `msg_to`,`msg_id`, `msg` ) VALUES ('".$_SESSION['user_id']."','".$msg_to."','".$msg_id."','".$msg."') ");
+  
+   $query1=$this->db->query("select * from conversation where msg_id='".$msg_id."' ");
+   
+  $data['msg']=$query1->result_array();
+ // echo $this->db->last_query();
+ $this->load->view('user/mssg_result.php',$data);
+ }
 }
 

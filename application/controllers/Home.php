@@ -34,7 +34,7 @@ public function index(){
 	
 	public function rideList(){
 	
-	$query=$this->db->query("select ride.* ,user.first_name,user.last_name,user.images,user.age from ride LEFT JOIN user on ride.user_id=user.id");
+	$query=$this->db->query("select ride.* ,user.first_name,user.last_name,user.images,user.age from ride LEFT JOIN user on ride.user_id=user.id") ;
 	//$query=$this->db->query("select * from ride");
 	//echo $this->db->last_query(); exit;
 	$data['val']=$query->result_array();
@@ -70,7 +70,7 @@ public function index(){
  
  
 
-		$query=$this->db->query("select ride.* ,user.first_name,user.last_name,user.images,user.age from ride LEFT JOIN user on ride.user_id=user.id where ride.id='".$param."'");
+		$query=$this->db->query("select ride.* ,user.first_name,user.last_name,user.images,user.age,user.govID_status,user.ph_status,user.status from ride LEFT JOIN user on ride.user_id=user.id where ride.id='".$param."'");
 	    $query1=$this->db->query("select SUM(seats) AS bookedSeats from booking where ride_id='".$param."'  ");
 		
 	$details=$data['val']=$query->result_array();
@@ -84,15 +84,20 @@ public function index(){
 	//echo $result2=$val1->seatOffered ; exit;
 
 }
-	//echo $result2 ; exit;
+	//echo $result2 ; 
 	foreach($bookedseats as $val){
 	
 	$result=$val->bookedSeats;
+	
 	}
 //echo $result ; exit;
+
 $data['leftseats']=$result2-$result;
-//echo $leftseats ; exit;
-	
+
+
+//echo $data['leftseats'] ; exit;
+
+	$data['msg_to']=$param;
 
 	$this->load->view('home/header.php');
 	$this->load->view('home/bookRide.php',$data);
@@ -123,11 +128,76 @@ $data['leftseats']=$result2-$result;
  
  }
  
+ public function message($param=NULL){
+ 
+ if(!empty($_SESSION['user_id'])){
+ 
+		$ride_id= $this->uri->segment(3);
+		$query=$this->db->query("select user_id from ride where id='".$ride_id."'");
+		//echo $this->db->last_query(); exit;
+		$result=$query->result_array();
+  
+  foreach($result as $val){
+  $msg_to=$val['user_id'];
+  }
+  
+// echo $msg_to ; exit;
+		$header= $this->input->post('header');
+		$msg= $this->input->post('msg');
+		$date=date('Y-m-d');
+		$query=$this->db->query("INSERT INTO `messaging`(`msg_from`, `msg_to`, `header`, `date`, `msg` ) VALUES ('".$_SESSION['user_id']."','".$msg_to."','".$header."','".$date."','".$msg."') ");
+		
+    $insert_id = $this->db->insert_id();
+	
+	   $query=$this->db->query("INSERT INTO `conversation`(`msg_from`, `msg_to`,`msg_id`, `date`, `msg` ) VALUES ('".$_SESSION['user_id']."','".$msg_to."','".$insert_id."','".$date."','".$msg."') ");
+ //  echo $insert_id ; exit;
+     $this->session->set_flashdata('msg_sent','<div class="notification-error"><div class="box-container">Your Message has been sent Sucessfull!</div></div>');
+ }
+ else{
+ 
+ redirect('main_template/loginPage');
+ 
+ }
+ 
+ 
+ }
+ 
 public function about_us(){
+
+ $query=$this->db->query("select * from about_us");
+ $data['content']=$query->result_array();
+ 
  
  	$this->load->view('home/header.php');
-	$this->load->view('home/about_us.php');
+	$this->load->view('home/about_us.php',$data);
 	$this->load->view('home/footer.php');
  
  }
+ public function contact_us_page(){
+ 
+ 
+ 	$this->load->view('home/header.php');
+	$this->load->view('home/contact_us.php');
+	$this->load->view('home/footer.php');
+ 
+ }
+  public function contact_us(){
+ 
+ $data=array();
+ 
+			$data['name']=$this->input->post('name');
+			$data['email']=$this->input->post('email');
+			$data['comment']=$this->input->post('comment');
+			
+			
+			$result=$this->db->insert('contact_us',$data);
+		//echo	$this->db->last_query(); exit;
+			if($result){
+			 $this->session->set_flashdata('msg_sent','<div class="notification-success"><div class="box-container">Your Message has been sent Sucessfull!</div></div>');
+			redirect('Home/contact_us_page');
+			}
+		
+ 
+ }
+ 
 }

@@ -81,7 +81,7 @@
 
             <div class="subscription-footer">
 
-                <input type="hidden" name="redirect_to" value="http://demo.sokolby.com/metrodir" />
+                <input type="hidden" name="redirect_to" value="#" />
                 <div class="submit"><i class="fa fa-arrow-circle-right"></i><input type="submit" class="button-green" value="Subscribe" name="user-submit" /></div>
 
             </div>

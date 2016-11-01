@@ -109,7 +109,7 @@
   
   
   
-  </script>+
+  </script>
 	<script>
 	
 	
@@ -123,8 +123,8 @@
       
       var from=$("#from").val();
 	  var depDate=$(".depDate").val();
- alert(to);
- alert(from);
+ //alert(to);
+// alert(from);
            
    $.ajax({
            
@@ -141,7 +141,7 @@
 			  
         },
            success:function(satya){
-			   alert("success");
+			   //alert("success");
 			//   alert(specialization);
            $(".div_one").hide();
            $(".result").html(satya);

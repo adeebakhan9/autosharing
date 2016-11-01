@@ -14,11 +14,14 @@ class Admin_model extends CI_Model
    
   
    $row=$query->num_rows();
-   
-   
+   $row1=$query->result();
+   foreach($row1 as $val)
+		{
+		$id=$val->id; 
+		}
    
    if($row>0){
-   
+   $_SESSION['admin_id']=$id; 
    redirect('Admin/Dashboard');
    
    }

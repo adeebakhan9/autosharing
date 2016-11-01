@@ -1,3 +1,9 @@
+
+<?php if(empty($_SESSION['admin_id'])){
+
+ 	redirect('admin/logout');
+
+}?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,63 +73,20 @@
                 <span style="margin-top:-10px">Autosharing Admin</span></a>
 
             <!-- user dropdown starts -->
-            <div class="btn-group pull-right">
-                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> Admin</span>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Profile</a></li>
-                    <li class="divider"></li>
-                    <li><a href="login.html">Logout</a></li>
-                </ul>
-            </div>
             <!-- user dropdown ends -->
-
             <!-- theme selector starts -->
-            <div class="btn-group pull-right theme-container animated tada">
+<div class="btn-group pull-right theme-container animated tada">
+
                 <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-tint"></i><span
-                        class="hidden-sm hidden-xs"> Change Theme / Skin</span>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" id="themes">
-                    <li><a data-value="classic" href="#"><i class="whitespace"></i> Classic</a></li>
-                    <li><a data-value="cerulean" href="#"><i class="whitespace"></i> Cerulean</a></li>
-                    <li><a data-value="cyborg" href="#"><i class="whitespace"></i> Cyborg</a></li>
-                    <li><a data-value="simplex" href="#"><i class="whitespace"></i> Simplex</a></li>
-                    <li><a data-value="darkly" href="#"><i class="whitespace"></i> Darkly</a></li>
-                    <li><a data-value="lumen" href="#"><i class="whitespace"></i> Lumen</a></li>
-                    <li><a data-value="slate" href="#"><i class="whitespace"></i> Slate</a></li>
-                    <li><a data-value="spacelab" href="#"><i class="whitespace"></i> Spacelab</a></li>
-                    <li><a data-value="united" href="#"><i class="whitespace"></i> United</a></li>
-                </ul>
-            </div>
+				
+                    <i class="glyphicon glyphicon-tint"></i><span class="hidden-sm hidden-xs"><a href="<?php echo base_url();?>index.php/admin/logout">LogOut</a></span>
+					
+					<span class="caret"> </span>
+				 
+			    </button>
+                
+          </div>
             <!-- theme selector ends -->
-
-            <ul class="collapse navbar-collapse nav navbar-nav top-menu">
-                <li><a href="#"><i class="glyphicon glyphicon-globe"></i> Visit Site</a></li>
-                <li class="dropdown">
-                    <a href="#" data-toggle="dropdown"><i class="glyphicon glyphicon-star"></i> Dropdown <span
-                            class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <form class="navbar-search pull-left">
-                        <input placeholder="Search" class="search-query form-control col-md-10" name="query"
-                               type="text">
-                    </form>
-                </li>
-            </ul>
-
         </div>
     </div>
     <!-- topbar ends -->
@@ -138,47 +101,29 @@
 
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
-                        <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="index.html"><i class="glyphicon glyphicon-home"></i><span> Dashboard</span></a>
-                        </li>
+						<li class="nav-header">Main</li>
+						<li><a class="ajax-link" href="index.html"><i class="glyphicon glyphicon-home"></i><span> Dashboard</span></a>
+						</li>
                         <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/userList"><i class="glyphicon glyphicon-eye-open"></i><span> User List </span></a>
                         </li>
-                       
                         <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/carList"><i class="glyphicon glyphicon-list-alt"></i><span> Car List </span></a>
                         </li>
-                         <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/ridelist"><i class="glyphicon glyphicon-eye-open"></i>Ride List <span></span></a>
+                        <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/ridelist"><i class="glyphicon glyphicon-eye-open"></i>Ride List <span></span></a>
                         </li>
+                        <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/bookingList"><i class="glyphicon glyphicon-font"></i><span>Booking List</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="<?php echo base_url();?>index.php/Admin/about_us_page"><i
+                                    class="glyphicon glyphicon-edit"></i>Manage About Us<span></span></a></li>
+                        <li><a class="ajax-link" href="<?php echo base_url();?>index.php/Admin/query_list"><i class="glyphicon glyphicon-picture"></i><span> Queries</span></a>
+                        </li>
+                      
+                        <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/send_mail_page"><i
+                                    class="glyphicon glyphicon-align-justify"></i><span> Send Mail</span></a></li>
                        
-                         <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/bookingList<strong></strong>"><i class="glyphicon glyphicon-font"></i><span>Booking List</span></a>
-                        </li>
-                          <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/create_sub_category_page"><i
-                                    class="glyphicon glyphicon-edit"></i><span> Create Sub Category</span></a></li>
-                        <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/queries_page"><i class="glyphicon glyphicon-picture"></i><span> List Queries</span></a>
-                        </li>
-                        
-                        
-                        <li class="nav-header hidden-md">Sample Section</li>
-                        <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/doctors_list_page"><i
-                                    class="glyphicon glyphicon-align-justify"></i><span> Doctors List</span></a></li>
-                        <li class="accordion">
-                           <a class="ajax-link" href="<?php echo base_url();?>index.php/admin/user_list_page"><i class="glyphicon glyphicon-plus"></i><span> User List</span></a>
-                           
-                        </li>
-                        <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/reviews_list_page"><i class="glyphicon glyphicon-calendar"></i><span>List Reviews</span></a>
-                        </li>
-                       <li><a class="ajax-link" href="<?php echo base_url();?>index.php/admin/services_reviews_list_page"><i class="glyphicon glyphicon-calendar"></i><span>List Services Reviews</span></a>
-                        </li>
-                        <li><a href="<?php echo base_url();?>index.php/admin/appointment_list_page"><i class="glyphicon glyphicon-globe"></i><span> Appointments</span></a></li>
-                        <li><a class="ajax-link" href="icon.html"><i
-                                    class="glyphicon glyphicon-star"></i><span> Icons</span></a></li>
-                        <li><a href="error.html"><i class="glyphicon glyphicon-ban-circle"></i><span> Error Page</span></a>
-                        </li>
-                        <li><a href="login.html"><i class="glyphicon glyphicon-lock"></i><span> Login Page</span></a>
-                        </li>
                     </ul>
                     <label id="for-is-ajax" for="is-ajax"><input id="is-ajax" type="checkbox"> Ajax on menu</label>
                 </div>
             </div>
-        </div>
+</div>
         <!--/span-->
         <!-- left menu ends -->

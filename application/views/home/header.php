@@ -137,31 +137,19 @@ var EM = {"ajaxurl":"http:\/\/demo.sokolby.com\/metrodir\/wp-admin\/admin-ajax.p
     <div id="navigation">
 
         <!-- Logo --><div id="logo">
-            <a href="http://demo.sokolby.com/metrodir">
+            <a href="<?php echo base_url();?>/index.php/home">
                                 <img class="opacity" src="<?php echo base_url(); ?>assets/image/logo.png" alt="">
             </a>
         </div><!-- /Logo -->
 
         <!-- Main Menu --><div id="main-menu">
             <div class="menu-menu-container"><ul id="sf-menu" class="menu sf-js-enabled sf-arrows"><li id="nav-menu-item-487" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-78 current_page_item"><a href="<?php echo base_url();?>/index.php/home">Home</a></li>
-<li id="nav-menu-item-482" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://demo.sokolby.com/metrodir/companies/" class="sf-with-ul">Company</a>
-<ul class="sub-menu" style="display: none;">
-	<li id="nav-menu-item-502" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-company"><a href="http://demo.sokolby.com/metrodir/company/industrie-llc/">Company with tabs</a></li>
-	<li id="nav-menu-item-503" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-company"><a href="http://demo.sokolby.com/metrodir/company/restaurant-lucia-2/">Company with map</a></li>
-	<li id="nav-menu-item-504" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-company"><a href="http://demo.sokolby.com/metrodir/company/orange-idea-company/">Company without map</a></li>
-	<li id="nav-menu-item-505" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-company"><a href="http://demo.sokolby.com/metrodir/company/your-house-a-s/">Company with street view</a></li>
-</ul>
-</li>
-<li id="nav-menu-item-479" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://demo.sokolby.com/metrodir/sample-page-2-2/" class="sf-with-ul">Sample Page</a>
-<ul class="sub-menu" style="display: none;">
-	<li id="nav-menu-item-480" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://demo.sokolby.com/metrodir/sample-page-2-2-2/">Sample Page</a></li>
-</ul>
-</li>
-<li id="nav-menu-item-481" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://demo.sokolby.com/metrodir/blog/">Blog</a></li>
-<li id="nav-menu-item-484" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://demo.sokolby.com/metrodir/submit-listing/">Price listing</a></li>
+
+
+<li id="nav-menu-item-484" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page"><a href="<?php echo base_url();?>index.php/home/contact_us_page">Contact Us</a></li>
 <li id="nav-menu-item-488" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="<?php echo base_url();?>index.php/home/about_us" class="sf-with-ul">About us</a>
 <ul class="sub-menu" style="display: none;">
-	<li id="nav-menu-item-489" class="sub-menu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://demo.sokolby.com/metrodir/contact-us/">Contact us</a></li>
+	<li id="nav-menu-item-484" class="main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="<?php echo base_url();?>index.php/home/contact_us_page">Contact us</a></li>
 </ul>
 </li>
 </ul></div>        </div><!-- /Main Menu -->

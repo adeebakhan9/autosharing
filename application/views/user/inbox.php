@@ -27,7 +27,7 @@
     <div class="box col-md-12">
         <div class="box-inner">
           <div class="box-header well">
-                <h2>Car List</h2>
+                <h2><i class="glyphicon glyphicon-info-sign"> </i> Inbox</h2>
 
                 <div class="box-icon">
                     <a href="#" class="btn btn-setting btn-round btn-default"><i
@@ -40,47 +40,62 @@
             </div>
             <br />
             
-           <div class="box-content">
-    <div class="alert alert-info"></a></div>
-    <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
-    <thead>
-    <tr><th>Owner</th>
-        <th>Name</th>
-        <th>Image</th>
-        <th>Model</th>
-        <th>Seats</th>
-        <th>Actions</th>
-    </tr>
-    </thead>
+            <div class="box-content row">
+                <div class="col-md-12">
+               
+          <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
+  
     <tbody>
     
-    <?php foreach($cars as $val1)  { ?>
+       <?php foreach($msg as $msg1) { ?>
+	  
+		 
+	   
+	<tr>
+	<td><?php 
+	$query2=$this->db->query("select user.images from user where id='".$msg1['msg_from']."'");
+		 $result=$query2->result_array();
+	 foreach($result as $result1){ ?>
+	<img src="<?php echo base_url();?>upload/profilePic/<?php echo $result1['images'];?>" style="width:50px; height:50px" />
+	<?php } ?>
+	
+	</td>
+		<td>
+	<h5>Header :<?php echo $msg1['header']?> </h5>
+		
+		
+		</td>
+		<td class="center"><span><a href="<?php echo base_url();?>/index.php/User/conversation/<?php echo $msg1['id']; 
+		?>/<?php 
+		
+		if($_SESSION['user_id']==$msg1['msg_from']){ 
+		
+		echo $msg1['msg_to'];
+		
+		 }
+		
+		
+		 else {
+		  echo $msg1['msg_from'];
+		  
+		   }  ?> ">View </a></span></td>
+		   
+		</tr>
    
-    <tr>
-	<td><?php echo $val1['first_name']; ?> <?php echo $val1['last_name']; ?>  </td>
-        <td><?php echo $val1['carName']; ?> </td>
-        <td class="center"><img src="<?php echo base_url(); ?>upload/car/<?php echo $val1['images']; ?>" style="width:150px"/></td>
-        <td class="center"><?php echo $val1['model']; ?></td>
-         <td class="center"><?php echo $val1['seats']; ?></td>
-  
-        <td class="center">
-           <!-- <a onclick="return confirm('Do you want to delete?');" href="<?php echo base_url(); ?>index.php/Admin/deleteCar/<?php echo $val1['id']; ?>" >
-                <i class="glyphicon glyphicon-trash icon-white"></i>
-              
-            </a> -->
-        </td>
-    </tr>
-<?php } ?>
-   
+    <?php } ?>
+		
   
     </tbody>
     </table>
-    </div>
-    </div>
+	
+	
+               </div>  </div>
         </div>
     </div>
 </div>
 
 
     <hr>
-    
+   
+
+  

@@ -62,7 +62,7 @@ float:right;
 <!-- Breadcrumbs --><div id="breadcrumbs"><div class="box-container">
 <?php echo $this->session->flashdata('booking_successfull'); ?>
     <div class="breadcrumbs-page-title"><h1>  Submit listing</h1></div>
-    <div class="breadcrumbs"><span><a href="http://demo.sokolby.com/metrodir">Home</a> <i class="fa fa-chevron-right"></i> </span>Submit listing</div>
+    <div class="breadcrumbs"><span><a href="<?php echo base_url();?>/index.php/home">Home</a> <i class="fa fa-chevron-right"></i> </span>Submit listing</div>
 
 </div></div><!-- Breadcrumbs -->
 
@@ -71,10 +71,10 @@ float:right;
                 
 <div id="pricing-plans">
     <div class="title">
-        <h2>Pricing Plans</h2>
+        <h2>Book Your Ride</h2>
     </div>
 <?php foreach($val as $val1) { 
- $count=$val1['seatOffered'];
+ //$count=$val1['seatOffered'];
 ?>
     <div class="pricing-table" >
 
@@ -202,15 +202,57 @@ float:right;
 									
 									<div class="pricing-cell"> 
 									<span class="carOwnerspanLeft">Govt. ID </span>
-									<span class="carOwnerspanRight">verified</span>
+                                                
+										<span class="carOwnerspanRight">
+												
+												<?php  if ($val1['govID_status']==1){ ?>
+												   
+												  Verified
+												   
+												 <?php   }
+												 
+												
+												
+												else { ?>
+												  
+												  
+												  Not verified
+												   
+												<?php    } ?>									</span>
 									</div>
 									<div class="pricing-cell"> 
 									<span class="carOwnerspanLeft">Phone number  </span>
-									<span class="carOwnerspanRight">verified</span>
+									<span class="carOwnerspanRight"><?php  if ($val1['ph_status']==1){ ?>
+												   
+												  Verified
+												   
+												 <?php   }
+												 
+												
+												
+												else { ?>
+												  
+												  
+												  Not verified
+												   
+												<?php    } ?>	</span>
 									</div>
 									<div class="pricing-cell"> 
 									<span class="carOwnerspanLeft">Email address  </span>
-									<span class="carOwnerspanRight">verified</span>
+									<span class="carOwnerspanRight"><?php  if ($val1['status']==1){ ?>
+												   
+												  Verified
+												   
+												 <?php   }
+												 
+												
+												
+												else { ?>
+												  
+												  
+												  Not verified
+												   
+												<?php    } ?>	</span>
 									</div>
 									<div class="pricing-cell"> 
 									<span class="carOwnerspanLeft">Car  </span>
@@ -225,28 +267,57 @@ float:right;
 				</div>
         
                     
+					
         
-                    <div class="pricing-column opacity" style="width:23%">
+                    <div class="pricing-column opacity" style="width:23%" >
           
 				
-				<form method="POST" class="form-horizontal"  action="<?php echo base_url(); ?>index.php/Home/book/<?php echo $val1['id'];?>" enctype="multipart/form-data" >
+				<form method="POST" class="form-horizontal"  action="<?php echo base_url(); ?>index.php/Home/book/<?php echo $val1['id'];?>" enctype="multipart/form-data" name="enquiry_form" onsubmit="return(validate());">
 							
-							<div class="pricing-header first"><?php echo $leftseats; ?> Seats left</div>
+							<div class="pricing-header first"><?php if($leftseats<=0){ echo "0" ;}
+							else{
+							 echo $leftseats; } ?> Seats left</div>
 							<div class="pricing-cost"><div class="price-currency">Rs</div><div class="price-big"><?php echo $val1['pricePerCoTraveller']; ?></div><br><br>per co-traveller</div>
 							<div class="pricing-cell"> 
 							<span class="bookingspanLeft">Select Seats </span>
 							<span>
+							
 							<select class="bookingselectoption" name="seats">
-							<?php
-							for($i=1; $i<=$count; $i++) { ?>
+							<?php 
+							for($i=1; $i<=$leftseats; $i++) { ?>
 							<option value="<?php echo $i ; ?>" ><?php echo $i ; ?>seats</option>
 							<?php } ?>
 							</select>
 							</span> 
 							</div>
-							
+							<script type="text/javascript">
+
+   <!--
+      // Form validation code will come here.
+	  
+      function validate()
+      {
+      
+         if( document.enquiry_form.checked.value == "" )
+         {
+            alert( "Please Accept Terms and conditions!" );
+            document.enquiry_form.checked.focus() ;
+            return false;
+         }
+       
+         
+        
+         
+        
+         return( true );
+      }
+      
+      
+ 
+</script>
+
 							<div class="pricing-cell"> 
-							<span style="bookingspanLeft"><input type="checkbox" style="display:block !important" />I have read and accept the <a href="#">T&Cs </a>and certify I am over 18 years old. </span>
+							<span style="bookingspanLeft"><input type="checkbox" style="display:block !important" name="checked"/>I have read and accept the <a href="#">T&Cs </a>and certify I am over 18 years old. </span>
 							
 							</div>
 							<div class="pricing-cell"> 
@@ -254,10 +325,16 @@ float:right;
 							
 							</div>
 							<div class="pricing-cell"> 
-							<span style="bookingspanLeft"><button type="submit">BOOK NOW</button></span>
+							<span style="bookingspanLeft">
+							<?php if($leftseats<=0) { ?> <span style="color:#CC0033">NO Seats Left</span> <?php }
+							else{ ?> <button type="submit">BOOK NOW</button></span> 
+							
+							<?php } ?>
+							
+							
 							
 							</div>                                                         
-                            </div>
+                           </div>
                                                </form>    
                            
        
@@ -266,7 +343,18 @@ float:right;
     </div>
 <?php } ?>
 </div>    
-                
+   <div id="comment-message" class="comment-message">
+    						<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title"><div class="title">Send Query</div> <small><a rel="nofollow" id="cancel-comment-reply-link" href="/metrodir/company/industrie-llc/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="<?php echo base_url(); ?>/index.php/Home/message/<?php echo $msg_to ;?>" method="post" id="comment-message-form" class="comment-form">
+																									<div class="clear"></div>
+<input id="url" class="text-input-grey" name="header" type="text" value="" size="30" placeholder="Subject"/><div class="clear"></div>
+												<textarea class="text-input-grey comment-message-main"  name="msg" cols="45" rows="8" aria-required="true" placeholder="Message..."></textarea><div class="clear"></div>						
+						<p class="form-submit"><input name="submit" type="submit" id="button-2-green" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='396' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>					</form>
+							</div><!-- #respond -->
+			</div>             
 <div id="register">
    
 	

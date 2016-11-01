@@ -109,13 +109,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </button>            <a class="navbar-brand" href="index.html"> 
+            </button>            <a class="navbar-brand" href="<?php echo base_url();?>/index.php/home"> 
                 <span>Autosharing</span></a>
 
             <!-- user dropdown starts -->
             <div class="btn-group pull-right">
                 <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> Admin</span>
+                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> User Dashboard</span>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
@@ -131,7 +131,7 @@
             <!-- theme selector ends -->
 
             <ul class="collapse navbar-collapse nav navbar-nav top-menu">
-                <li><a href="<?php echo base_url(); ?>/index.php/home/rideList"><i class="glyphicon glyphicon-road btn btn-info btn-sm"></i> Find a Ride</a></li>
+                <li><a href="<?php echo base_url(); ?>/index.php/home"><i class="glyphicon glyphicon-road btn btn-info btn-sm"></i> Find a Ride</a></li>
                 <li><a href="<?php echo base_url(); ?>/index.php/user/offerRidePage"><i class="glyphicon glyphicon-road btn btn-info btn-sm"></i> Offer a Ride </a> </li>
                <!--  <li>
                     <form class="navbar-search pull-left">
@@ -156,12 +156,12 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="index.html"><i class="glyphicon glyphicon-home"></i><span> Dashboard</span></a>
-                        </li>
+                       <!-- <li><a class="ajax-link" href="#"><i class="glyphicon glyphicon-home"></i><span> Dashboard</span></a>
+                        </li> -->
                         <li><a class="ajax-link" href="<?php echo base_url();?>index.php/User"><i class="glyphicon glyphicon-eye-open"></i><span> Edit Profile</span></a>
                         </li>
                        
-                        <li><a class="ajax-link" href="<?php echo base_url();?>index.php/User/uploadePhotoPage"><i class="glyphicon glyphicon-list-alt"></i><span> Photos</span></a>
+                        <li><a class="ajax-link" href="<?php echo base_url();?>index.php/User/uploadePhotoPage"><i class="glyphicon glyphicon-eye-open"></i><span> Photos</span></a>
                         </li>
                          <li><a class="ajax-link" href="<?php echo base_url();?>index.php/User/postalAddressPage"><i class="glyphicon glyphicon-eye-open"></i><span> Postal address</span></a>
                         </li>
@@ -174,7 +174,9 @@
                         </li>
 						  <li><a class="ajax-link" href="<?php echo base_url();?>index.php/User/rideOffered"><i class="glyphicon glyphicon-eye-open"></i><span> Ride Offered</span></a>
                         </li>
-                      
+                        </li>
+						  <li><a class="ajax-link" href="<?php echo base_url();?>index.php/User/inbox"><i class="glyphicon glyphicon-eye-open"></i><span> Inbox</span></a>
+                        </li>
                     </ul>
                     <label id="for-is-ajax" for="is-ajax"><input id="is-ajax" type="checkbox"> Ajax on menu</label>
                 </div>

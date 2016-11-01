@@ -9,46 +9,20 @@
                         <!-- Description --><div class="description-text block">
                 <div class="title"><h3>About Us</h3></div>
                 <div class="block-content"><p>Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis.</p></div>
-            </div><!-- /Description -->
-            
-                        <!-- Twitter Block --><div class="twitter-feed block">
-                <div class="title"><h3>Recent Tweets</h3></div>
-                <div id="twitter-feed" class="block-content">
-                    
-<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-timeline twitter-timeline-rendered" style="position: static; visibility: visible; display: inline-block; width: 520px; height: 300px; padding: 0px; border: none; max-width: 100%; min-width: 180px; margin-top: 0px; margin-bottom: 0px; min-height: 200px;" data-widget-id="377042022453899264" title="Twitter Timeline" src="./saved_resource(2).html"></iframe>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>                </div>
-            </div><!-- /Twitter Block -->
-            
-            <!-- Recent Posts --><div class="recent-posts block">
-                <div class="title"><h3>Recent Posts</h3></div>
-                <div class="block-content">
-
-                    
-                    <ul>
-            <li>
-            <a href="http://demo.sokolby.com/metrodir/2015/04/09/hello-world/" title="Hello world!">Hello world!</a>
-        </li>
-            <li>
-            <a href="http://demo.sokolby.com/metrodir/2013/07/30/hello-world-2-3/" title="Hello world!">Hello world!</a>
-        </li>
-            <li>
-            <a href="http://demo.sokolby.com/metrodir/2013/07/25/blog-post-title-goes-here-7/" title="Blog Post Title Goes Here">Blog Post Title Goes Here</a>
-        </li>
-    </ul>
-
-                    
-                </div>
-            </div><!-- /Recent Posts-->
-
-                            <!-- Flickr Feed --><div class="flickr-feed block">
-                    <div class="title"><h3>Flickr Feed</h3></div>
-                    <div id="flickr-feed" class="block-content"><ul><li><a class="opacity" href="http://farm4.staticflickr.com/3940/15647274066_2ee48c3fe9_b.jpg"><img src="assets/image/15647274066_2ee48c3fe9_s.jpg" alt="Halloween 2014 at Envato in Melbourne"></a></li><li><a class="opacity" href="http://farm4.staticflickr.com/3945/15485436268_846ccca178_b.jpg"><img src="assets/image/15485436268_846ccca178_s.jpg" alt="Halloween 2014 at Envato in Melbourne"></a></li><li><a class="opacity" href="http://farm4.staticflickr.com/3956/15668911091_4ef20118b5_b.jpg"><img src="assets/image/15668911091_4ef20118b5_s.jpg" alt="Halloween 2014 at Envato in Melbourne"></a></li><li><a class="opacity" href="http://farm6.staticflickr.com/5605/15484954949_a4e97a9dc5_b.jpg"><img src="assets/image/15484954949_a4e97a9dc5_s.jpg" alt="Halloween 2014 at Envato in Melbourne"></a></li><li><a class="opacity" href="http://farm8.staticflickr.com/7490/15647103116_1e4b9033f0_b.jpg"><img src="assets/image/15647103116_1e4b9033f0_s.jpg" alt="Halloween 2014 at Envato in Melbourne"></a></li><li><a class="opacity" href="http://farm6.staticflickr.com/5599/15668909741_eaf3db4054_b.jpg"><img src="assets/image/15668909741_eaf3db4054_s.jpg" alt="Halloween 2014 at Envato in Melbourne"></a></li></ul></div>
-                </div><!-- /Flickr Feed -->
-            
-            </div></div><!-- /Footer Blocks -->
+            </div>
+                        <!-- /Description -->
+                        <!-- Twitter Block -->
+                        <!-- /Twitter Block -->
+                        <!-- Recent Posts -->
+                        <!-- /Recent Posts-->
+                        <!-- Flickr Feed -->
+                        <!-- /Flickr Feed -->
+    </div>
+    </div><!-- /Footer Blocks -->
 
         <!-- Copyright --><div id="copyright"><div class="box-container">
-        <!-- Copyright Text --><div class="copyright-text">Copyright © 2014 UOU Apps</div><!-- /Copyright Text -->
+        <!-- Copyright Text --><div class="copyright-text">Copyright ©</div>
+        <!-- /Copyright Text -->
         <!-- Social Links --><ul class="social-links">
                             <li class="facebook"><a href="http://facebook.com/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
                                         <li class="google"><a href="http://googleplus.com/" title="Google +" target="_blank"><i class="fa fa-google-plus"></i></a></li>

@@ -43,89 +43,157 @@
             <div class="box-content row"  >
                 <div class="col-md-10">
                    
-	
+	<table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
+  
+    <tbody>
+       <?php foreach ($val as $val1) {?>
+       
+		<tr>
+		<td><strong>Name</strong></td>
+		<td class="center"><?php echo $val1['user_id']; ?> </td>
+		</tr>
+   
+        <tr>
+		<td><strong>From</strong></td>
+		<td class="center"><?php echo $val1['departure']; ?> </td>
+		</tr>
+		<tr>
+		<td><strong>To</strong></td>
+		<td class="center"><?php echo $val1['arrival']; ?> </td>
+		</tr>
+		<tr>
+		<td><strong>Stops</strong></td>
+		<td class="center"><?php echo $val1['stops']; ?> </td>
+		</tr>
+		<tr>
+		<td><strong>Departure Date and Time</strong></td>
+		<td class="center"><?php echo $val1['departureDate']; ?> </td>
+		</tr>
+		<tr>
+		<td><strong>Arrival Date and Time</strong></td>
+		<td class="center"><?php echo $val1['arrivalDate']; ?> </td>
+		</tr>
+		<tr>
+		<td><strong>Trip type</strong></td>
+		<td class="center"><?php echo $val1['tripType']; ?> </td>
+		</tr>
+		<tr>
+		<td><strong>Travel Cost</strong></td>
+		<td class="center"><?php echo $val1['travelCost']; ?> </td>
+		</tr>
+		<tr>
+		<td><strong>Details</strong></td>
+		<td class="center"><?php echo $val1['rideDetails']; ?> </td>
+		</tr>
+		<tr>
+		<td><strong>Luggage</strong></td>
+		<td class="center"><?php 
+		  if ($val1['luggageSize']==0){ ?>
+												   
+												   Small
+												   
+												 <?php   }
+												 
+												  elseif($val1['luggageSize']==1){ ?>
+												  
+												  
+												   Medium
+												   
+												<?php    }
+												
+												   else{ ?>
+												   
+												   Large
+												   
+												  <?php  }
+		 ?> </td>
+		</tr>
+		<tr>
+		<td><strong>Seat Offered</strong></td>
+		<td class="center"><?php echo $val1['seatOffered']; ?> </td>
+		</tr>
+		<tr>
+		<td><strong>Price per Traveller</strong></td>
+		<td class="center"><?php echo $val1['pricePerCoTraveller']; ?> </td>
+		</tr>
+		
+  <tr>
+		<td><strong>Back Seat</strong></td>
+		<td class="center"><?php echo $val1['backSeat']; ?> </td>
+		</tr>
+		<tr>
+		<td><strong>Leaving at</strong></td>
+		<td class="center"><?php  if ($val1['leavingAt']==0){ ?>
+												   
+												  Right on Time
+												   
+												 <?php   }
+												 
+												  elseif($val1['leavingAt']==1){ ?>
+												  
+												  
+												   In a 15 minute window
+												   
+												
+												   
+												 <?php   }
+												 
+												  elseif($val1['leavingAt']==2){ ?>
+												  
+												  
+												   In a 30 minute window
+												   
+												<?php    }
+												
+												elseif($val1['leavingAt']==3){ ?>
+												  
+												  
+												   In a 1 hour window
+												   
+												<?php    }
+												
+												   else{ ?>
+												   
+												  In a 2 minute window
+												   
+												  <?php  } ?> </td>
+		</tr>
+		<tr>
+		<td><strong>Detour of</strong></td>
+		<td class="center"><?php   if ($val1['detour']==1){ ?>
+												   
+												  not willing to make a detour
+												   
+												 <?php   }
+												 
+												  elseif($val1['detour']==2){ ?>
+												  
+												  
+												   15 min detour max
+												   
+												
+												   
+												 <?php   }
+												 
+												  elseif($val1['detour']==3){ ?>
+												  
+												  
+												   30 min detour max
+												   
+												<?php    }
+												
+												else { ?>
+												  
+												  
+												  Anything is fine
+												   
+												<?php    } ?> </td>
+		</tr>
+		    <?php } ?>
+    </tbody>
+    </table>
                               
-            <form method="POST" class="form-horizontal"  action="<?php echo base_url(); ?>index.php/User/updatePostalAaddress/64" enctype="multipart/form-data" >
-                    
-                   
-                   <?php foreach ($val as $val1) {?>
-                <div class="form-group" ><label class="col-sm-3 control-label"> Name</label>
-				
-                             <span class="col-sm-2 control-label"><?php echo $val1['user_id']; ?>                   
-                             </span>
-                </div>
-				<div class="form-group"><label class="col-sm-3 control-label">From</label>
-                              <span class="col-sm-2 control-label"><?php echo $val1['departure']; ?>
-							  </span>
-                    
-                </div>
-				<div class="form-group"><label class="col-sm-3 control-label">To</label>
-
-                  <span class="col-sm-2 control-label"><?php echo $val1['arrival']; ?>                   
-                       </span>
-                </div>
-				<div class="form-group"><label class="col-sm-3 control-label">Stops</label>
-
-                    <span class="col-sm-2 control-label"><?php echo $val1['stops']; ?>                   
-                        </span>
-                </div>
-				<div class="form-group"><label class="col-sm-3 control-label">Departure Date and Time</label>
-
-                   <span class="col-sm-2 control-label"><?php echo $val1['departureDate']; ?> </span> , <span class="col-sm-2 control-label"><?php echo $val1['departureTime']; ?>                   
-                        </span>
-                </div>
-				<div class="form-group"><label class="col-sm-3 control-label">Arrival Date and Time</label>
-
-                   <span class="col-sm-2 control-label"><?php echo $val1['arrivalDate']; ?> </span><span class="col-sm-2 control-label"><?php echo $val1['arrivalTime']; ?>                    
-                      </span>
-                </div>
-				<div class="form-group"><label class="col-sm-3 control-label">Trip type</label>
-
-                 <span class="col-sm-2 control-label"><?php echo $val1['tripType']; ?>                   
-                      </span>
-                </div>
-				<div class="form-group"><label class="col-sm-3 control-label">Travel Cost</label>
-
-                    <span class="col-sm-2 control-label"><?php echo $val1['travelCost']; ?>                   
-                       </span>
-                </div>
-				<div class="form-group"><label class="col-sm-3 control-label">Details</label>
-
-                   <span class="col-sm-2 control-label"><?php echo $val1['rideDetails']; ?>                   
-                        </span>
-                </div>
-				<div class="form-group"><label class="col-sm-3 control-label">Luggage</label>
-
-                   <span class="col-sm-2 control-label"><?php echo $val1['luggageSize']; ?>                   
-                       </span>
-                </div>
-				<div class="form-group"><label class="col-sm-3 control-label">Seat Offered</label>
-
-                   <span class="col-sm-2 control-label"><?php echo $val1['seatOffered']; ?>                   
-                      </span>
-                </div>
-				<div class="form-group"><label class="col-sm-3 control-label">Price per Traveller</label>
-
-                   <span class="col-sm-2 control-label"><?php echo $val1['pricePerCoTraveller']; ?>                   
-                      </span>
-                </div>
-				<div class="form-group"><label class="col-sm-3 control-label">Back Seat</label>
-
-                    <span class="col-sm-2 control-label"><?php echo $val1['backSeat']; ?> </div>
-                    </span>
-				<div class="form-group"><label class="col-sm-3 control-label">Leaving at</label>
-
-                   <span class="col-sm-2 control-label"><?php echo $val1['leavingAt']; ?>                   
-                       </span>
-                </div>
-				<div class="form-group"><label class="col-sm-3 control-label">Detour of</label>
-
-                    <span class="col-sm-2 control-label"><?php echo $val1['detour']; ?>                   
-                  </span>
-                </div>
-                
-               <?php } ?>
-            </form>
+            
                   </div>
                
             </div>
