@@ -1,83 +1,175 @@
- <!-- Footer Mirror --><div id="footer-mirror" style="height: 306px;"></div><!-- /Footer Mirror -->
+	<!-- FOOTER-AREA START -->
+		<footer class="footer-area">
+			<div class="footer-top">
+				<div class="footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<div class="single-footer footer-logo">
+									<img src="<?php echo base_url(); ?>assets/img/logo.png" alt="" />
+									<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-4 col-xs-12">
+								<div class="single-footer footer-contact">
+									<h2>contact us</h2>
+									<ul>
+										<li>
+											<i class="sp-phone"></i> 
+											<span>+019 (111) 25184203</span>
+										</li>
+										<li>
+											<i class="sp-email"></i>
+											<span>company@domain.com</span>
+											<span>company@email.info</span>
+										</li>
+										<li>
+											<i class="sp-map-marker"></i> 
+											<span>777/ab Rampura Bonosri</span>
+											<span>North DC-3050 USA.</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-2 hidden-sm col-xs-12">
+								<div class="single-footer footer-menu">
+									<h2>company</h2>
+									<ul>
+										<li><a href="#">Account</a></li>
+										<li><a href="#">Log in</a></li>
+										<li><a href="#">Regester</a></li>
+										<li><a href="#">Shop</a></li>
+										<li><a href="#">Chakeout</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-4 col-xs-12">
+								<div class="single-footer footer-message">
+									<form action="#">
+										<h2>Quick contact</h2>
+										<div class="footer-message-box">
+											<input type="text" placeholder="your email address" />
+											<textarea placeholder="your messege" ></textarea>
+											<input type="submit" value="submit"/>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="copyright-brief">
+								<p>Copyright &copy; <a href="#">Codecarnival</a> All right reserved</p>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="footer-social text-right">
+								<a href="#"><i class="sp-facebook"></i></a>
+								<a href="#"><i class="sp-twitter"></i></a>
+								<a href="#"><i class="sp-linkedin"></i></a>
+								<a href="#"><i class="sp-google"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- FOOTER-AREA END -->
+		
+		<!-- QUICKVIEW PRODUCT -->
+		<div id="quickview-wrapper">
+		   <!-- Modal -->
+		   <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+			    <div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						</div>
+						<div class="modal-body">
+							<div class="modal-product">
+								<div class="product-images">
+									<div class="main-image images">
+										<img alt="#" src="<?php echo base_url(); ?>assets/img/quickview-photo.jpg"/>
+									</div>
+								</div><!-- .product-images -->
 
-</section><!-- /Section Wrapper --></section><!-- /Section Main -->
+								<div class="product-info">
+									<h1>Aenean eu tristique</h1>
+									<div class="price-box-3">
+										<hr />
+										<div class="s-price-box">
+											<span class="new-price">$160.00</span>
+											<span class="old-price">$190.00</span>
+										</div>
+										<hr />
+									</div>
+									<a href="shop.html" class="see-all">See all features</a>
+									<div class="quick-add-to-cart">
+										<form method="post" class="cart">
+											<div class="numbers-row">
+												<input type="number" id="french-hens" value="3">
+											</div>
+											<button class="single_add_to_cart_button" type="submit">Add to cart</button>
+										</form>
+									</div>
+									<div class="quick-desc">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero.
+									</div>
+									<div class="social-sharing">
+										<div class="widget widget_socialsharing_widget">
+											<h3 class="widget-title-modal">Share this product</h3>
+											<ul class="social-icons">
+												<li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="sp-facebook"></i></a></li>
+												<li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="sp-twitter"></i></a></li>
+												<li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="sp-google"></i></a></li>
+												<li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="sp-linkedin"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div><!-- .product-info -->
+							</div><!-- .modal-product -->
+						</div><!-- .modal-body -->
+					</div><!-- .modal-content -->
+			    </div><!-- .modal-dialog -->
+		   </div>
+		   <!-- END Modal -->
+		</div>
+		<!-- END QUICKVIEW PRODUCT -->
 
-<!-- Footer --><footer class="no-rtl" style="margin-top: -306px;">
+		
+		<!-- all js here -->
+		<!-- jquery latest version -->
+        <script src="<?php echo base_url(); ?>assets/js/vendor/jquery-1.12.0.min.js"></script>
+		<!-- bootstrap js -->
+        <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+		<!-- jquery.nivo.slider js -->
+        <script src="<?php echo base_url(); ?>assets/lib/js/jquery.nivo.slider.js"></script>
+        <script src="<?php echo base_url(); ?>assets/lib/home.js"></script>
+		<!-- owl.carousel js -->
+        <script src="<?php echo base_url(); ?>assets/js/owl.carousel.min.js"></script>
+		<!-- meanmenu js -->
+        <script src="<?php echo base_url(); ?>assets/js/jquery.meanmenu.js"></script>
+		<!-- jquery-ui js -->
+        <script src="<?php echo base_url(); ?>assets/js/jquery-ui.min.js"></script>
+		<!-- lightbox.min js -->
+        <script src="<?php echo base_url(); ?>assets/js/lightbox.min.js"></script>
+		<!-- countdon.min js -->
+        <script src="<?php echo base_url(); ?>assets/js/countdon.min.js"></script>
+		<!-- wow js -->
+        <script src="<?php echo base_url(); ?>assets/js/wow.min.js"></script>
+		<script type="text/javascript">
+			new WOW().init();
+		</script>
+		<!-- plugins js -->
+        <script src="<?php echo base_url(); ?>assets/js/plugins.js"></script>
+		<!-- main js -->
+        <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
+    </body>
 
-    <!-- Footer Blocks --><div id="footer"><div class="box-container">
-        
-                        <!-- Description --><div class="description-text block">
-                <div class="title"><h3>About Us</h3></div>
-                <div class="block-content"><p>Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis.</p></div>
-            </div>
-                        <!-- /Description -->
-                        <!-- Twitter Block -->
-                        <!-- /Twitter Block -->
-                        <!-- Recent Posts -->
-                        <!-- /Recent Posts-->
-                        <!-- Flickr Feed -->
-                        <!-- /Flickr Feed -->
-    </div>
-    </div><!-- /Footer Blocks -->
-
-        <!-- Copyright --><div id="copyright"><div class="box-container">
-        <!-- Copyright Text --><div class="copyright-text">Copyright ©</div>
-        <!-- /Copyright Text -->
-        <!-- Social Links --><ul class="social-links">
-                            <li class="facebook"><a href="http://facebook.com/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                        <li class="google"><a href="http://googleplus.com/" title="Google +" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                                        <li class="twitter"><a href="http://twitter.com/" title="Twitter" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
-                                        <li class="linkedin"><a href="http://linkedin.com/" title="Linkedin" target="_blank"><i class="fa fa-linkedin-square fa-lg"></i></a></li>
-                                        <li class="pinterest"><a href="http://pinterest.com/" title="Pinterest" target="_blank"><i class="fa fa-pinterest fa-lg"></i></a></li>
-                                        <li class="dribbble"><a href="http://dribbble.com/" title="Dribbble" target="_blank"><i class="fa fa-dribbble fa-lg"></i></a></li>
-                    </ul><!-- /Social Links -->
-    </div></div><!-- /Copyright -->
-    
-</footer><!-- /Footer -->
-
-    <!-- Scroll Top --><a class="scrollTop" href="http://demo.sokolby.com/metrodir/#header" style="display: none;">
-        <div id="up_container">
-            <span><i class="fa fa-chevron-up fa-2x"></i></span>
-        </div>
-    </a><!-- /Scroll Top -->
-
-
-<script type="text/javascript" src="assets/imajsge/jquery.form.min.js"></script>
-<script type="text/javascript">
-/* <![CDATA[ */
-var _wpcf7 = {"loaderUrl":"http:\/\/demo.sokolby.com\/metrodir\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
-/* ]]> */
-</script>
-<script type="text/javascript" src="assets/js/scripts.js"></script>
-<script type="text/javascript" src="assets/js/js"></script>
-<script type="text/javascript" src="assets/js/jquery-ui-1.10.4.custom.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.colorbox-min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.flexslider-min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.selectbox-0.6.1.js"></script>
-<script type="text/javascript" src="assets/js/jquery.tweet.js"></script>
-<script type="text/javascript" src="assets/js/jquery.mobilemenu.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.placeholder.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.ui.autocomplete.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.sheepItPlugin.js"></script>
-<script type="text/javascript" src="assets/js/jquery.gomap-1.3.2.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.gmap.min.js"></script>
-<script type="text/javascript" src="assets/js/map(1).js"></script>
-<script type="text/javascript" src="assets/js/markerclusterer.js"></script>
-<script type="text/javascript" src="assets/js/ajax_search.js"></script>
-<script type="text/javascript" src="assets/js/jflickrfeed.min.js"></script>
-<script type="text/javascript" src="assets/js/superfish.js"></script>
-<script type="text/javascript" src="assets/js/rating.js"></script>
-<script type="text/javascript">
-/* <![CDATA[ */
-var MyAjax = {"ajaxurl":"http:\/\/demo.sokolby.com\/metrodir\/wp-admin\/admin-ajax.php","ajaxnonce":"e7adefc983"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="assets/js/scripts(1).js"></script>
-<script type="text/javascript" src="assets/js/comment-reply.min.js"></script>
-
-
-
-
-
-
-<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="display: none;"></ul><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" src="./saved_resource(3).html"></iframe></body></html>
+<!-- Mirrored from codecarnival.net/html/shopick-preview/shopick/shop.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 05 Nov 2016 15:32:46 GMT -->
+</html>

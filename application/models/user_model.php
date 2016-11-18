@@ -11,6 +11,9 @@ class User_model extends CI_Model
     function insertUser($data)
     {
         return $this->db->insert('user', $data);
+		
+			
+			
     }
 	
 	 function verifyEmailID($email)
@@ -29,14 +32,9 @@ class User_model extends CI_Model
     
     	
     	
-		$result=$this->db->query("update user set first_name='".$userDetails['first_name']."',last_name='".$userDetails['last_name']."',email='".$userDetails['email']."',password='".$userDetails['password']."',ph_number='".$userDetails['ph_number']."',location='".$userDetails['location']."',country='".$userDetails['country']."',state='".$userDetails['state']."',city='".$userDetails['city']."',pincode='".$userDetails['pincode']."',images='".$userDetails['images']."' where id='".$_SESSION['user_id']."'");
+		$result=$this->db->query("update user set first_name='".$userDetails['first_name']."',last_name='".$userDetails['last_name']."',email='".$userDetails['email']."',ph_number='".$userDetails['ph_number']."' where id='".$_SESSION['user_id']."'");      
+		//echo $this->db->last_query(); exit;
 		
-		if($result)	{
-		
-		redirect('User');
-		
-		
-		}
 		
 		}
 		
@@ -70,22 +68,11 @@ class User_model extends CI_Model
 	
 	}
 	
-	 function addCar($data)
-    {
-	
-	
-        return $result=$this->db->insert('car', $data);
-        if($result)	{
-		
-		redirect('User/carPage');
-		
-		
-		}
-    }	
     
-    function carDetails(){
-   
-	$query=$this->db->query("select * from car where userID ='".$_SESSION['user_id']."' ");
+    function personalDetails(){
+  // $query2=$this->db->query("select ride.user_id, user.first_name,user.last_name from ride Left JOIN user on ride.user_id=user.id where ride.id='".$rideID."'");
+	$query=$this->db->query("select user.*,address.shipping_add,address.shipp_country,address.shipp_city, address.shipp_zip,address.home_add,address.office_add,address.country,address.city,address.zip from user left join address on user.id=address.user_id where user.id='".$_SESSION['user_id']."' ");
+//	echo $this->db->last_query(); exit; 
 	return  $query->result_array();
     }
 	
